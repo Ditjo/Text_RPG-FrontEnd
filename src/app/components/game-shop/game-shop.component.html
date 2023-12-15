@@ -1,0 +1,43 @@
+<div class="mainview">
+    <div class="gameview">
+        <div class="shopshelf">
+            <h2>Weapons</h2>
+            <ul>
+                <li *ngFor="let weapon of weaponlist">
+                    <table>
+                        <th>{{weapon.weaponName}}</th>
+                        <td>{{weapon.value}} g</td>
+                        <button (click)="Buyitem(weapon)">Buy</button>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <div class="shopshelf">
+            <h2>Armour</h2>
+            <ul>
+                <li *ngFor="let armour of armourlist">
+                    <table>
+                        <th>{{armour.armourTypeName}}</th>
+                        <td>{{armour.value}} g</td>
+                        <button (click)="Buyitem(armour)">Buy</button>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <div class="shopshelf">
+            <h2>Potions</h2>
+            <ul>
+                <li *ngFor="let potion of Potionlist">
+                    <table>
+                        <th>{{potion.potionTypeName}}</th>
+                        <td>{{potion.value}} g</td>
+                        <button (click)="Buyitem(potion)">Buy</button>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu">
+        <button class="menubtn" (click)="Return()">Leave</button>
+    </div>
+</div>

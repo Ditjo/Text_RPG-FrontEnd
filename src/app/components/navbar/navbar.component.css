@@ -1,0 +1,54 @@
+ul
+{
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* position: fixed; */
+    display: flex;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #611;
+}
+
+li
+{
+    margin: 0;
+    float: left;
+}
+
+li button
+{
+    color: #edd;
+    border: none;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    background-color: transparent;
+}
+
+li button:hover
+{
+    background-color: #810;
+}
+
+.switch-account
+{
+    margin-left: auto;
+}
+
+.account-state
+{
+    color: #edd;
+    padding-top: 9px;
+    margin-left: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .content-container
+{
+    padding-bottom: 2%;
+} */

@@ -1,0 +1,39 @@
+.mainview{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.gameview{
+    display: flex;
+    flex:1;
+    margin: 5%;
+}
+.menu{ 
+    display: flex;
+    height: auto;
+    justify-content: center;
+}
+
+.shopshelf{
+    text-align: center;
+    flex: 1;
+    margin: 2%;
+    background-color: blanchedalmond;
+    opacity: 0.5;
+}
+
+.shopshelf li{
+    margin: 10px;
+}
+
+.menubtn{
+    margin: 10px;
+    padding: 1% 2% 1% 2%;
+    background-color: wheat;
+    border-radius: 20px;
+}
+
+.menubtn:hover{
+    filter: brightness(70%);
+    cursor: pointer;
+}

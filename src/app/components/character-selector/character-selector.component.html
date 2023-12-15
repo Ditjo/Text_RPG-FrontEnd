@@ -1,0 +1,169 @@
+<div class="nav">
+    <app-navbar [showNavbar]="true"></app-navbar>
+</div>
+<div class="view">
+    <div class="flex-container">
+        <div>
+            <ul>
+                <li *ngFor="let hero of herolist">
+                    <button (click)="SelectHero(hero)">
+                        <table>
+                            <tr>
+                                <th>Name: </th>
+                                <td>{{hero.heroName}}</td>
+                                <th>Race: </th>
+                                <td>{{hero.race?.raceType}}</td>
+                            </tr>
+                            <tr>
+                                <th>Level: </th>
+                                <td>{{hero.level}}</td>
+                                <th>Career: </th>
+                                <td>{{hero.career?.careerType}}</td>
+                            </tr>
+                        </table>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="flex-container" *ngIf="selectedhero != null">
+            <div>
+                <div>
+                    Info
+                    <Table [hidden]="isEditable">
+                        <tr>
+                            <th>Name: </th>
+                            <td [hidden]="isEditable">{{selectedhero.heroName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Race: </th>
+                            <td>{{selectedhero.race?.raceType}}</td>
+                        </tr>
+                        <tr>
+                            <th>Career: </th>
+                            <td>{{selectedhero.career?.careerType}}</td>
+                        </tr>
+                        <tr>
+                            <th>Level: </th>
+                            <td>{{selectedhero.level}}</td>
+                        </tr>
+                        <tr>
+                            <th>XP: </th>
+                            <td>{{selectedhero.heroXp}}</td>
+                        </tr>
+                        <tr>
+                            <th>Gold: </th>
+                            <td>{{selectedhero.inventory.gold}}</td>
+                        </tr>
+                        <tr>
+                            <th>Note: </th>
+                            <td>{{selectedhero.note}}</td>
+                        </tr>
+                    </Table>
+                    <form [formGroup]="updateSelectedHero" [hidden]="!isEditable">
+                        <Table>
+                            <tr>
+                                <th>Name: </th>
+                                <td><input id="heroName" type="text" formControlName="heroName"></td>
+                            </tr>
+                            <tr>
+                                <th>Race: </th>
+                                <td>
+                                    <select formControlName="race">
+                                        <option *ngFor="let race of racelist" [ngValue]="race">{{race.raceType}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Career: </th>
+                                <td>
+                                    <select formControlName="career">
+                                        <option *ngFor="let career of careerlist" [ngValue]="career">{{career.careerType}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Level: </th>
+                                <td>{{selectedhero.level}}</td>
+                            </tr>
+                            <tr>
+                                <th>XP: </th>
+                                <td>{{selectedhero.heroXp}}</td>
+                            </tr>
+                            <tr>
+                                <th>Gold: </th>
+                                <td>{{selectedhero.inventory.gold}}</td>
+                            </tr>
+                            <tr>
+                                <th>Note: </th>
+                                <td><input id="note" type="text" formControlName="note"></td>
+                            </tr>
+                        </Table>
+                    </form>
+                </div>
+                <div>
+                    Items
+                    <table>
+                        <tr>
+                            <th>Armour:</th>
+                            <ul>
+                                <li>{{selectedhero.inventory.armour?.armourTypeName}}</li>
+                            </ul>
+                        </tr>
+                        <tr>
+                            <th>Weapons:</th>
+                            <ul *ngFor="let weapon of selectedhero.inventory.weapons">
+                                <li>{{weapon.weaponName}}</li>
+                            </ul>
+                        </tr>
+                        <tr>
+                            <th>Potions:</th>
+                            <ul *ngFor="let potion of selectedhero.inventory.potions">
+                                <li>{{potion.potionType?.potionTypeName}}: {{potion.amount}}</li>
+                            </ul>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                Stats
+                <Table>
+                    <tr>
+                        <th>Strength: </th>
+                        <td>{{selectedhero.entityBaseSystem.strength}}</td>
+                    </tr>
+                    <tr>
+                        <th>Agility: </th>
+                        <td>{{selectedhero.entityBaseSystem.agility}}</td>
+                    </tr>
+                    <tr>
+                        <th>Vigor: </th>
+                        <td>{{selectedhero.entityBaseSystem.vigor}}</td>
+                    </tr>
+                    <tr>
+                        <th>Spirit: </th>
+                        <td>{{selectedhero.entityBaseSystem.spirit}}</td>
+                    </tr>
+                    <tr>
+                        <th>Health: </th>
+                        <td>{{selectedhero.entityBaseSystem.health}}</td>
+                    </tr>
+                    <tr>
+                        <th>Energy: </th>
+                        <td>{{selectedhero.entityBaseSystem.energy}}</td>
+                    </tr>
+                </Table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div>
+        <button (click)="GetAllHeros()">Get All Hero</button>
+    </div> -->
+    <div class="flex-container">
+        <button class="buttons" (click)="CreateNewHero()" [disabled]="isEditable">Create New Hero</button>
+        <button class="buttons" (click)="DeleteSelectedHero()" [disabled]="!selectedhero || isEditable">Delete</button>
+        <button class="buttons" (click)="UpdateHero()" [disabled]="!selectedhero || isEditable">Edit Hero</button>
+        <button class="buttons" (click)="SaveChanges()" [hidden]="!isEditable" [disabled]="!updateSelectedHero.value.heroName">Save Changes</button>
+        <button class="buttons" (click)="ToMainGame()" [disabled]="!selectedhero || isEditable">Venture On</button>
+    </div>
+</div>

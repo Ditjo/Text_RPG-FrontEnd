@@ -1,0 +1,26 @@
+.box{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.box-container{
+    display: contents;
+}
+
+/* .header{
+    flex: 0 1 auto;
+    height: 5vh;
+    background-color:saddlebrown;
+} */
+
+.view {
+    flex: 1 1 auto;
+    /* height: 100%; */
+}
+
+/* .footer{
+    flex: 0 1 40px;
+    height: 5vh;
+    background-color:saddlebrown;
+} */

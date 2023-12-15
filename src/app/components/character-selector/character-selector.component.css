@@ -1,0 +1,57 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.view{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons{
+    float: left;
+    color: #baa;
+    padding: 10px;
+    margin: 10px 5px 0 0;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border: 4px #7007;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #200c;
+    font-size: 20px;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+}
+.buttons:hover{
+    color: #fee;
+    font-weight: bold;
+    border: 4px #730;
+    border-style: solid;
+    background-color: #620;
+    transition-duration: 0.3s;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    border: 1px solid black;
+    list-style-type: none;
+}
+/* li {
+    border: 1px solid black;
+    padding: 5px;
+  } */
+
+th, td{
+    padding: 5px;
+}

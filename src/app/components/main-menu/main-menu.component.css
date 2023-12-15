@@ -1,0 +1,56 @@
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+ul li
+{
+    padding-left: 15%;
+    list-style: none;
+    text-align: center;
+}
+
+ul li a
+{
+    color: #200c;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+ul:hover li a
+{
+    color: #200c;
+}
+
+ul li:hover a
+{
+    color: #c00;
+    background: transparent;
+}
+
+.container
+{
+    position: relative;
+}
+
+.menu
+{
+    padding-top: 20%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+}
+
+.menu-img
+{
+    width: 100%;
+    height: auto;
+    padding: 5% 5% 0 20%;
+}

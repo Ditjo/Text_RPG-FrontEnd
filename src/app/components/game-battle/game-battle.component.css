@@ -1,0 +1,56 @@
+.mainview{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.gameview{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.imageview{
+    flex: 1;
+}
+
+.bars{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.herobar{
+    background-color: antiquewhite;
+    padding: 10px;
+}
+.monsterbar{
+    background-color: antiquewhite;
+    padding: 10px;
+    
+}
+
+.distance{
+    background-color: antiquewhite;
+    padding: 10px;
+    font-size: 25px;
+    align-self: self-end;
+}
+
+.menu{ 
+    display: flex;
+    height: auto;
+    justify-content: center;
+    background-color: saddlebrown;
+}
+
+.menubtn{
+    margin: 10px;
+    padding: 1% 2% 1% 2%;
+    background-color: wheat;
+    border-radius: 20px;
+}
+
+.menubtn:hover{
+    filter: brightness(70%);
+    cursor: pointer;
+}

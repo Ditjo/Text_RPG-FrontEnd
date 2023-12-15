@@ -1,0 +1,57 @@
+<div class="nav">
+    <app-navbar [showNavbar]="true"></app-navbar>
+</div>
+<form [formGroup]="createNewHero">
+    <div class="flex-form">
+        <div class="flex-container">
+            <label for="heroname">Hero Name:</label>
+            <input id="heroName" type="text" formControlName="heroName">
+            <label for="race">Race:</label>
+            <select formControlName="race">
+                <option *ngFor="let race of racelist" [ngValue]="race">{{race.raceType}}</option>
+            </select>
+            <label for="career">Career:</label>
+            <select formControlName="career">
+                <option *ngFor="let career of careerlist" [ngValue]="career">{{career.careerType}}</option>
+            </select>
+            <label for="note">Note:</label>
+            <input id="note" type="text" formControlName="note">
+            <label for="weapon">Starter Weapon:</label>
+            <select formControlName="weapon">
+                <option *ngFor="let weapon of starterWeaponslist" [ngValue]="weapon">{{weapon.weaponName}}</option>
+            </select>
+        </div>
+        <div class="flex-container">
+            <div class="flex-container">
+                <label>Strength: {{newEntityBaseSystem.strength}}</label>
+                <label>Agility: {{newEntityBaseSystem.agility}}</label>
+                <label>Vigor: {{newEntityBaseSystem.vigor}}</label>
+                <label>Spirit: {{newEntityBaseSystem.spirit}}</label>
+                <label>Health: {{newEntityBaseSystem.health}}</label>
+                <label>Energy: {{newEntityBaseSystem.energy}}</label>
+                <button (click)="RollStats()">Roll Stats</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container">
+    <button (click)="Create()" [disabled]="!createNewHero.value.heroName || 
+                                           !createNewHero.value.race ||
+                                           !createNewHero.value.career ||
+                                           !createNewHero.value.weapon ||
+                                           isDisabled" >Create</button>
+
+    </div>
+</form>
+
+<!-- <br> -->
+<!-- <a routerLink="/main-game">Venture On</a> -->
+<!-- <div *ngIf="LocalStorageRead() == '1'">
+    You can only see this if you are logged in as admin
+</div> -->
+<!-- <button (click)="LocalStorageWrite()">Write</button>
+<button (click)="LocalStorageRead()">Read</button> -->
+<!-- <div *ngIf="LocalStorageRead() == '1'">
+    You can only see this if you are logged in as admin
+</div> -->
+<!-- <button (click)="LocalStorageWrite()">Write</button>
+<button (click)="LocalStorageRead()">Read</button> -->

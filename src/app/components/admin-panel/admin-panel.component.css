@@ -1,0 +1,167 @@
+.ul-top
+{
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #731;
+}
+
+.li-top
+{
+    margin: 0;
+    float: left;
+}
+
+.li-top button
+{
+    color: #edd;
+    border: none;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    background-color: transparent;
+}
+
+.li-top button:hover
+{
+    background-color: #930;
+}
+
+.component-navbar
+{
+    top: 0;
+    width: 100%;
+    margin-top: 27px;
+    position: fixed;
+}
+
+.content
+{
+    margin-top: 80px;
+    position: fixed;
+}
+
+.item-list
+{
+    padding-left: 20px;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.item-buttons
+{
+    float: left;
+    color: #baa;
+    height: 30px;
+    width: 150px;
+    margin: 5px 0;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 4px #7007;
+    border-style: solid;
+    border-radius: 8px;
+    background-color: #200c;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+}
+
+.item-buttons:hover
+{
+    color: #fee;
+    font-weight: bold;
+    border: 4px #730;
+    border-style: solid;
+    background-color: #620;
+    transition-duration: 0.3s;
+}
+
+#save-btn:hover
+{
+    color: #fee;
+    font-weight: bold;
+    border: 4px #370;
+    border-style: solid;
+    background-color: #260;
+    transition-duration: 0.3s;
+}
+
+.form-container
+{
+    padding-left: 60px;
+}
+
+.item-form
+{
+    color: #300;
+    font-weight: bold;
+    /* background-color: #fff7; */
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+}
+
+.item-form input, select
+{
+    padding: 3px;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: #edd;
+}
+
+.check
+{
+    background-color: #fee7;
+}
+
+.user-inputs
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.ul-bottom
+{
+    margin: 0;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #731;
+}
+
+.li-bottom
+{
+    margin: 0;
+    float: left;
+}
+
+.li-bottom button
+{
+    color: #edd;
+    border: none;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    background-color: transparent;
+}
+
+.li-bottom button:hover
+{
+    background-color: #930;
+}
+
+#delete-btn
+{
+    margin-left: auto;
+}

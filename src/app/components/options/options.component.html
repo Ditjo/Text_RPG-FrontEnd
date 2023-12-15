@@ -1,0 +1,16 @@
+<div class="nav">
+    <app-navbar [showNavbar]="true"></app-navbar>
+</div>
+<div class="content-container">
+    <h2>Options</h2>
+    <br>
+    <p>Sound Slider</p>
+    <p class="sound-slider">----------|----------</p>
+    <!-- <p>Other Options</p> -->
+    <div class="buttons">
+        <button class="tutorial" (click)="tutorial()">Tutorial</button>
+        <div *ngIf="LocalStorageRead() == '1'">
+            <button class="admin-panel" (click)="adminPanel()">Admin Panel</button>
+        </div>
+    </div>
+</div>

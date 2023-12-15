@@ -1,0 +1,102 @@
+
+<div class="mainview">
+    <div class="topnav">
+        <app-navbar [showNavbar]="true"></app-navbar>
+    </div>
+    <div class="view">
+        <div class="gameview">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="playerinfo">
+            <div class="playerinfoview">
+                <ng-container *ngIf="playerInfoToShow == 'info'">
+                    <table class="tableplayerinfo">
+                        <tr>
+                            <th>Name: </th>
+                            <td >{{playingHero?.heroName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Race: </th>
+                            <td>{{playingHero?.race?.raceType}}</td>
+                        </tr>
+                        <tr>
+                            <th>Career: </th>
+                            <td>{{playingHero?.career?.careerType}}</td>
+                        </tr>
+                        <tr>
+                            <th>Note: </th>
+                            <td>{{playingHero?.note}}</td>
+                        </tr>
+                        <tr>
+                            <th>Level: </th>
+                            <td>{{playingHero?.level}}</td>
+                         </tr>
+                        <tr>
+                         <th>XP: </th>
+                            <td>{{playingHero?.heroXp}}</td>
+                        </tr>
+                    </table>
+                </ng-container>
+                <ng-container *ngIf="playerInfoToShow == 'inventory'">
+                    <table class="tableplayerinfo">
+                        <tr>
+                            <th>Gold: </th>
+                            <td>{{playingHero?.inventory?.gold}}</td>
+                        </tr>
+                        <tr>
+                            <th>Armour:</th>
+                            <ul>
+                                <li>{{playingHero?.inventory?.armour?.armourTypeName}}</li>
+                            </ul>
+                        </tr>
+                        <tr>
+                            <th>Weapons:</th>
+                            <ul *ngFor="let weapon of playingHero?.inventory?.weapons">
+                                <li>{{weapon.weaponName}}</li>
+                            </ul>
+                        </tr>
+                        <tr>
+                            <th>Potions:</th>
+                            <ul *ngFor="let potion of playingHero?.inventory?.potions">
+                                <li>{{potion.potionType?.potionTypeName}}: {{potion.amount}}</li>
+                            </ul>
+                        </tr>
+                    </table>
+                </ng-container>
+                <ng-container *ngIf="playerInfoToShow == 'stats'">
+                    <table class="tableplayerinfo">
+                        <tr>
+                            <th>Strength: </th>
+                            <td>{{playingHero?.entityBaseSystem?.strength}}</td>
+                        </tr>
+                        <tr>
+                            <th>Agility: </th>
+                            <td>{{playingHero?.entityBaseSystem?.agility}}</td>
+                        </tr>
+                        <tr>
+                            <th>Vigor: </th>
+                            <td>{{playingHero?.entityBaseSystem?.vigor}}</td>
+                        </tr>
+                        <tr>
+                            <th>Spirit: </th>
+                            <td>{{playingHero?.entityBaseSystem?.spirit}}</td>
+                        </tr>
+                        <tr>
+                            <th>Health: </th>
+                            <td>{{playingHero?.entityBaseSystem?.health}}</td>
+                        </tr>
+                        <tr>
+                            <th>Energy: </th>
+                            <td>{{playingHero?.entityBaseSystem?.energy}}</td>
+                        </tr>
+                    </table>
+                </ng-container>
+            </div>
+            <div class="playerinfobuttons">
+                <button class="playerinfobtn" (click)="SwitchPlayerInfo('info')">Info</button>
+                <button class="playerinfobtn" (click)="SwitchPlayerInfo('inventory')">Inventory</button>
+                <button class="playerinfobtn" (click)="SwitchPlayerInfo('stats')">Stats</button>
+            </div>
+        </div>
+    </div>
+</div>

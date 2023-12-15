@@ -1,0 +1,88 @@
+<div class="nav">
+    <app-navbar [showNavbar]="true"></app-navbar>
+</div>
+<div class="view">
+    <nav class="component-navbar">
+        <ul class="ul-top">
+            <li class="li-top"><button (click)="Career()">Career</button></li>
+            <li class="li-top"><button (click)="Race()">Race</button></li>
+            <li class="li-top"><button (click)="Weapon()">Weapons</button></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        <div class="selection-list">
+            <ul *ngIf="showList == 'Race/'">
+                <li class="item-list" *ngFor="let race of racelist">
+                    <button class="item-buttons" (click)="SelectRace(race)">
+                        {{race.raceType}}
+                    </button>
+                </li>
+            </ul>
+            <ul *ngIf="showList == 'Career/'">
+                <li class="item-list" *ngFor="let career of careerlist">
+                    <button class="item-buttons" (click)="SelectCareer(career)">
+                        {{career.careerType}}
+                    </button>
+                </li>
+            </ul>
+            <ul *ngIf="showList == 'Weapon/'">
+                <li class="item-list" *ngFor="let weapon of weaponlist">
+                    <button class="item-buttons" (click)="SelectWeapon(weapon)">
+                        {{weapon.weaponName}}
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <div class="item-form" *ngIf="showList == 'Career/'">
+                <form [formGroup]="createNewCareer">
+                    <div class="user-inputs">
+                        <input id="careeName" type="text" formControlName="careerName" placeholder="Career :">
+                    </div>
+                </form>
+            </div>
+            <div class="item-form" *ngIf="showList == 'Race/'">
+                <form [formGroup]="createNewRace">
+                    <div class="user-inputs">
+                        <input id="raceName" type="text" formControlName="raceName" placeholder="Race :">
+                    </div>
+                </form>
+            </div>
+            <div class="item-form" *ngIf="showList == 'Weapon/'">
+                <form [formGroup]="createNewWeapon">
+                    <div class="user-inputs" *ngIf="showList == 'Weapon/'">
+                        <input id="weaponName" type="text" formControlName="weaponName" placeholder="Weapon :">
+                        <input id="weaponDamageModifier" type="number" formControlName="weaponDamageModifier" placeholder="Damage Modifier :">
+                        <input id="skillRoll" type="number" formControlName="skillRoll" placeholder="skill Roll :">
+                        <input id="value" type="number" formControlName="value" placeholder="value :">
+                        <input id="note" type="text" formControlName="note" placeholder="note :">
+                        <label class="check">Available To Hero
+                            <input type="checkbox" formControlName="availableToHero">
+                        </label>
+                        <label class="check">Starter Weapon
+                            <input type="checkbox" formControlName="starterWeapon">
+                        </label>
+                        <select formControlName="weaponType">
+                            <option *ngFor="let weaponType of weaponTypeList" [ngValue]="weaponType">
+                                {{weaponType.weaponTypeName}}</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="IsSaveable">
+                <br>
+                <button id="save-btn" class="item-buttons" (click)="SaveEdit()">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="component-navbar">
+        <ul class="ul-bottom">
+            <li class="li-bottom"><button (click)="Create()">Create</button></li>
+            <li class="li-bottom"><button (click)="Update()">Edit</button></li>
+            <li class="li-bottom" id="delete-btn"><button (click)="Delete()">Delete</button></li>
+        </ul>
+    </nav>
+</div>

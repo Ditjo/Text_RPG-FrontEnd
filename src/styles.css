@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    /* background: #dcd9dc;*/
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    /* display: flexbox; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    overflow: hidden;
+    
+    background-image: url("assets/images/tutorialbackground.jpg");
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
